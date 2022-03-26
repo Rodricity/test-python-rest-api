@@ -51,11 +51,11 @@ Si todo ha marchado bien, el proyecto indicará que está listo para recibir pet
 
 Puesto que este proyecto implementa una API REST para el manejo de usuarios, solo se ha implementado el endpoint para al manejo de usuarios.
 
-Toda la comunicación desde y hacia el servidor se realiza mediante el envío de data en formato JSON.
+Toda la comunicación desde y hacia el servidor se realiza mediante el envío de data en formato **JSON**.
 
 ## Usuarios
 
-Los endpoint para el manejo de usuarios llevan el prefijo "/user/", por ejemplo para solicitar todos los usuarios se utilizaría un endpoint de la siguiente manera.
+Los endpoint para el manejo de usuarios llevan el prefijo "/user/"; Por ejemplo para solicitar todos los usuarios se utilizaría un endpoint de la siguiente manera.
 
 ```bash
 curl -X GET --url "https://127.0.0.1:8000/user/"
