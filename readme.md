@@ -64,15 +64,15 @@ Por su parte, cada Usuario dentro del sistema posee la siguiente estructura:
 }
 ```
 
-### GET: /user/
+### **GET: /user/**
 
-### GET: /user/&lt;user-id&gt;
+### **GET: /user/&lt;user-id&gt;**
 
 Las peticiones GET tienen por objetivo obtener los usuarios (primer caso) o bien obtener un usuario en particular (segundo caso).
 
-Para el caso del listado de usuarios no se ha implementado el paginado; No obstante esto sí debería considerarse en un caso de aplicación real puesto que de lo contrario el listado retornado podría llegar a ser problemático para una única peticion.
+**Nota:** Para el caso del listado de usuarios no se ha implementado el paginado; No obstante esto sí debería considerarse en un caso de aplicación real puesto que de lo contrario el listado retornado podría llegar a ser problemático para una única peticion.
 
-### POST: /user/
+### **POST: /user/**
 
 Endpoint para la creación de un usuario; La data enviada al servidor debe incluir la siguiente información:
 
@@ -87,17 +87,17 @@ Endpoint para la creación de un usuario; La data enviada al servidor debe inclu
 
 Por su parte el servidor entregará devuelta la información completa del usuario (incluyendo el ID auto-generado)
 
-### UPDATE: /user/&lt;user-id&gt;
+### **UPDATE: /user/&lt;user-id&gt;**
 
 Endpoint para actualizar un usuario; La información enviada debe ser idéntica al endpoint anterior y adicionalmente la ruta de la petición debe indicar el ID del usuario a editar.
 
 El servidor en respuesta entregará la data del usuario actualizada.
 
-### DELETE: /user/&lt;user-id&gt;
+### **DELETE: /user/&lt;user-id&gt;**
 
 Endpoint para eliminar un usuario de la 'base de datos'.
 
-## Testing
+## Testing [Linux]
 
 A modo complementario se ha generado un script en bash para realizar una prueba del sistema de manera automática; Esto se puede transformar en un test unitario en Python e incluirlo como parte del proyecto, no obstante para mantener la solución lo más sencilla posible esto se implementó por fuera.
 
@@ -106,3 +106,15 @@ De igual forma en caso de querer verificar su resultado se puede ejecutar:
 ```bash
 bash/test.sh
 ```
+
+Este script al estar diseñado para bash no funcionará salvo en máquinas que corran alguna distribución de Linux y tengan instalado el programa 'curl'.
+
+# Comentarios finales
+
+## Django SECRET_KEY
+
+Nunca se debería cargar este parámetro en los repositorios; En este caso al ser una respuesta de un desafío es irrelevante; No así en un entorno de producción.
+
+## Entorno de desarrollo
+
+El entorno de desarrollo local ha sido Ubuntu LTS; No debiese haber problemas de utilizar este repositorio en Windows no obstante (a opinión personal) un entorno de desarrollo debería ser lo más similar a un entorno de producción.
