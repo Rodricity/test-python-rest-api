@@ -1,0 +1,7 @@
+# Este archivo se utiliza para que GIT considere esta carpeta pero no su contenido
+# Permite que pipenv siempre instale de manera local las dependencias.
+
+# Ignorar todo lo que haya en este directorio
+*
+# Excepto este archivo.
+!.gitignore

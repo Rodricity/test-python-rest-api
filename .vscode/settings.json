@@ -1,0 +1,10 @@
+{
+   "editor.wordWrap": "wordWrapColumn",
+   "editor.wordWrapColumn": 200,
+   "python.formatting.autopep8Args": [
+      "--max-line-length=200"
+   ],
+   "files.exclude": {
+      ".venv/lib": true,
+   },
+}
