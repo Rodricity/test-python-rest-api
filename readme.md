@@ -6,22 +6,28 @@ El presente repositorio contiene la solución al desafío de generar una API HTT
 
 ## Descripción de la App
 
-Esta aplicación permite levantar un servidor web capaz de reponder a peticiones HTTP REST para la administración de usuarios en una 'base de datos' almacenada en memoria. Dicha base de datos en realidad no es más que un listado de objetos que son manipulados a través de un controlador y un modelo.
+Esta aplicación permite levantar un servidor web capaz de reponder a peticiones HTTP REST para la administración de usuarios en una 'base de datos' almacenada en memoria. Dicha base de datos en realidad no es más que un listado de objetos que son manipulados a través de un [controlador](rest_api/models/users/controller.py) y un [modelo](rest_api/models/users/model.py).
 
 ## Puesta en marcha
 
 ### Prerequisitos
 
-- Este proyecto fue desarrollado para la versión 3.9 de ptyhon, aunque en general debería funcionar bien con cualquier versión de ptyhon 3+
+- Este proyecto fue desarrollado para la versión 3.9 de Python, aunque en general debería funcionar bien con cualquier versión de Python 3+
 
-- Para administrar de una manera más consitente las dependencias este proyeto requiere mantener instalado pipenv en la máquina que ejecute esta aplicación.
+- (Opcional) Para administrar de una manera más consitente las dependencias este proyeto se utilizó [pipenv](https://pipenv.pypa.io/en/latest/), el cual permite administrar de manera más sencillas las dependencias.
 
 ### Instalación
 
-Cumplidos ambos requisitos anteriores bastará con ejecutar los comandos:
+Cumplidos los requisitos anteriores bastará con ejecutar los comandos:
 
-```
+```bash
+# Si se instaló pipenv
 pipenv install
+
+# Si no usamos pipenv
+python -m venv .venv
+source .venv/bin/activate
+pip install Django jsonpickle email-validator
 ```
 
 ### Ejecución
@@ -29,8 +35,11 @@ pipenv install
 Una vez instaladas las dependencias del proyecto bastará con utilizar el script de administración de Django para iniciar el servidor.
 
 ```bash
-# Ingresamos al ambiente virtual de Python
+# Si tenemos pipenv: Ingresamos al ambiente virtual de Python
 pipenv shell
+
+# Alternativamente si no tenemos pipenv:
+source .venv/bin/activate
 
 # Lanzamos el servidor web incluido en Django
 python manage.py runserver
